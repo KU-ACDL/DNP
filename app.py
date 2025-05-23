@@ -241,7 +241,7 @@ else:
 
 st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: gray;'>© 2025 KUACDL | Aerospace Computing & Design Lab.</div>",
+    "<div style='text-align: center; color: gray;'>© 2025 건국대학교 항공우주 전산설계 연구실 | KUACDL</div>",
     unsafe_allow_html=True
 )
 
