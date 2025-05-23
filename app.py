@@ -43,6 +43,7 @@ st.write("드론소음예측모델 ver. 0.0 (2025.05)")
 # ─────────────────────────
 # 상단 전체 (입력1) : 드론 스펙
 # ─────────────────────────
+st.subheader("[예측 입력]")
 st.subheader("입력 1: 드론 스펙")
 col1, col2 = st.columns(2)
 
@@ -131,6 +132,9 @@ input_scaled = scaler.transform(input_point)
 prediction, sig = model.predict(input_scaled, return_std=True)
 res = float(prediction)
 
+st.markdown("---")
+st.subheader("[예측 결과]")
+
 if mission == "정지비행(호버링)":
     st.markdown(
     f"<h3> 예측 등가소음도 : {res:.2f} dBA</h3>",
@@ -180,7 +184,7 @@ if mission == "정지비행(호버링)":
         
         st.pyplot(fig)
         
-        
+
 else:
     st.markdown(
     f"<h3> 예측 최고소음도 : {res:.2f} dBA</h3>",
@@ -234,29 +238,6 @@ else:
         st.pyplot(fig)
 
 
-
-
-# st.write(f"프롭소재 : {plastic, carbon}")
-# st.write(f"모터 수 : {n_motors_int}")
-# st.write(f"입력값 : {input_df}")
-# st.write(f"입력값 : {input_dict}")
-# st.write(f"입력값 : {input_df.iloc[0].to_dict()}")
-# st.write(f"feature : {feature}")
-
-
-
-
-
-
-# input_vector = np.array([[prop_size, rpm, motor_power, weight]])
-# predicted_noise = hover_model.predict(input_vector)[0]
-
-# st.subheader(f"📣 예측된 소음: {predicted_noise:.2f} dB")
-
-# fig, ax = plt.subplots()
-# ax.bar(["Predicted Noise (dB)"], [predicted_noise], color="orange")
-# ax.set_ylim(0, 120)
-# st.pyplot(fig)
 
 st.markdown("---")
 st.markdown(
